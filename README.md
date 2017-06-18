@@ -13,29 +13,17 @@ a C library.
 Lambda-Term integrates with zed to provide text edition facilities in
 console applications.
 
-Dependencies
-------------
-
-* [OCaml](http://caml.inria.fr/ocaml/) (>= 3.12)
-* [findlib](http://projects.camlcity.org/projects/findlib.html)
-* [react](http://erratique.ch/software/react)
-* [lwt](http://ocsigen.org/lwt/) (>= 2.4.0) built with react support
-* [Camomile](http://github.com/yoriyuki/Camomile) (>= 0.8)
-* [zed](http://github.com/diml/zed) (>= 1.2)
-
-For building the development version, you also need to install
-[oasis](http://oasis.forge.ocamlcore.org/) (>= 0.3.0).
-
 Installation
 ------------
 
 To build and install Lambda-Term:
 
-    $ ./configure
     $ make
     $ make install
 
 ### Documentation and manual pages _(optional)_
+
+_This part hasn't been ported to jbuilder yet_
 
 To build the documentation:
 
@@ -47,8 +35,21 @@ It will then be installed by `make install`.
 
 To build and execute tests:
 
-    $ ./configure --enable-tests
     $ make test
+
+### Examples _(optional)_
+
+To build examples:
+
+    $ make examples
+
+Binaries for the examples will be in `_build/default/examples`.
+
+To build the `asciiart` example:
+
+    $ make asciiart
+
+Note that it requires the `camlimages` library.
 
 Terminal emulators compatibility
 --------------------------------
@@ -80,6 +81,19 @@ You can then send the result to jeremie@dimino.org, including:
 * the application you are using as terminal emulator,
 * the contents of the `TERM` environment variable inside the terminal (`echo $TERM`),
 * the output of `print_sequences.ml` with, for each line, the keystroke.
+
+Key bindings
+------------
+
+Key bindings can be set in `~/.lambda-term-inputrc`. See
+[lambda-term-inputrc](lambda-term-inputrc). Useful mappings:
+
+```
+# This allows zsh-like searching the history by pressing up/down
+[read-line]
+up: history-search-prev
+down: history-search-next
+```
 
 Main modules
 ------------

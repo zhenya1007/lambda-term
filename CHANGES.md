@@ -1,3 +1,30 @@
+1.12 (next)
+-----------
+
+* Fix: copy & pasting the terminal output doesn't adds many spaces
+  after the end of lines (#52, Deokhwan Kim, fixes diml/utop#186)
+
+1.11 (2017-04-04)
+-----------------
+
+* Add history-search-prev and history-search-next (#47, Fabian Hemmer)
+* Allow frame widgets to be labeled (#36, Andrew Ray)
+* Add an alignment setting to label widgets (#36, Andrew Ray)
+* Add scrollbar widgets (#33, Andrew Ray)
+* Improve the `lambda-term-inputrc.5` man page (#41, Léon van Velzen)
+* Allow editor widgets to request a specific size and add a "double
+  editor" example (#42, Fabian Bonk)
+* Add `^` to the list of characters recognized in inputrc files (#46,
+  github user zhenya1007)
+* Switch the build to jbuilder
+* Drop compatibility with 4.01
+
+1.10.1 (2016-08-15)
+-------------------
+
+* fix a race condition in `LTerm_read_line`. The race would often
+  appear when copy&pasting
+
 1.10 (2016-04-07)
 -----------------
 
